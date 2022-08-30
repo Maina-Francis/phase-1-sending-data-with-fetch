@@ -14,5 +14,11 @@ function submitData(name, email) {
       .then(function (data) {
         return (document.body.innerHTML = data["id"]);
       })
+
+      //handles a failed POST request using catch, appends the error message to the DOM
+      .catch(function (error) {
+        alert(error.message);
+        document.body.innerHTML = error.message;
+      })
   );
 }
